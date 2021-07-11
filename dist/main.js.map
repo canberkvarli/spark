@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://spark/./src/index.js"],"names":["window","addEventListener","event","console","log"],"mappings":"AAAAA,OAAOC,iBAAiB,kBAAkB,SAACC,GACvCC,QAAQC,IAAI","file":"main.js","sourcesContent":["window.addEventListener('DOMContentLoad', (event) => {\n    console.log('DOM fully parsed');\n});\n"],"sourceRoot":""}
