@@ -29,6 +29,7 @@ Spark is an interactive demo project which is intented to improve the frontend s
   – Sign in and be able to play existing recordings.
   
 • Record and Play buttons
+• Drum pads on the keyboard
 
 
 
