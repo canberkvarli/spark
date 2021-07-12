@@ -51,20 +51,35 @@ Spark is an interactive demo project which is intented to improve the frontend s
 ## Implementation Timeline
 
 **Monday 07/12** 
+
 • Build the piano keyboard with 25 keys and the notes table.
+
 • Press keys to start and stop the sound.
+
 • UI
+
 **Tuesday 07/13**
+
 • Setup the options to be able to change the type of the sound from the knob.
+
 • Add an Envelope filter.
+
 • UI
+
 **Wednesday 07/13**
+
 • UI
+
 • Test
+
 **Thursday 07/14**
+
 • Bugfix
+
 • UI improve
+
 • Test
+
 • Deploy
 
 
