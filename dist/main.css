@@ -8,7 +8,7 @@ body {
 .keyboard {
   height: 401px;
   width: 901px;
-  border: 1px solid black;
+  border: 0.5px solid black;
   padding: 50px;
   margin-left: 160px;
   position: relative;
@@ -21,28 +21,44 @@ body {
   position: relative;
   height: 201px;
   width: 901px;
-  border: 1px solid black;
+  border: 0.5px solid black;
   margin-top: 148px;
   margin-left: -52px;
   box-sizing: border-box;
 }
 
+/* KEYS */
 .white-key {
   position: relative;
-  border: 1px solid black;
-  width: 61px;
+  border: 0.5px solid black;
+  width: 57.91px;
   height: 199px;
-  /* overflow: hidden; */
   white-space: nowrap;
-  /* vertical-align: middle; */
-  /* display: inline-block; */
-  /* margin: auto; */
-  /* justify-items: center; */
-  /* position: relative; */
-  /* text-align: right; */
   float: left;
-  /* white-space: nowrap; */
-  /* flex-wrap: wrap; */
+  background-color: whitesmoke;
+}
+
+.black-key {
+  width: 29px;
+  height: 101px;
+  position: absolute;
+  z-index: 1;
+  background-color: black;
+  margin-left: 44.9px;
+}
+
+/* **************************** */
+/* FILTERS & DISPLAY */
+.upper-container {
+  background-color: coral;
+  height: 201px;
+  width: 901px;
+  box-sizing: border-box;
+  position: absolute;
+  border: black solid 1px;
+  margin-right: -40px;
+  margin-top: -50px;
+  margin-left: -52px;
 }
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
