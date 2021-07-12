@@ -1,4 +1,4 @@
-# Spark: The Synthesizer
+# Spark: The Synthesizer Keyboard
 
 
 Spark is an interactive demo project which is intented to improve the frontend skills of the oneself as well as creating a musical spark within every soul in the world. Anyone who is curious, interested, or even just to play around with it can find something bigger in themselves that I hope spark will illuminate their emotions and ideas into music. 
