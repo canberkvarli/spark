@@ -1,1 +1,50 @@
+/*!*******************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/styles/piano.css ***!
+  \*******************************************************************************************************************************************/
+body {
+  background-color: lightyellow;
+}
+
+.keyboard {
+  height: 401px;
+  width: 901px;
+  border: 1px solid black;
+  padding: 50px;
+  margin-left: 160px;
+  position: relative;
+  box-sizing: border-box;
+  margin-top: 100px;
+}
+
+/* PIANO */
+.lower-container {
+  position: relative;
+  height: 201px;
+  width: 901px;
+  border: 1px solid black;
+  margin-top: 148px;
+  margin-left: -52px;
+  box-sizing: border-box;
+}
+
+.white-key {
+  position: relative;
+  border: 1px solid black;
+  width: 61px;
+  height: 199px;
+  /* overflow: hidden; */
+  white-space: nowrap;
+  /* vertical-align: middle; */
+  /* display: inline-block; */
+  /* margin: auto; */
+  /* justify-items: center; */
+  /* position: relative; */
+  /* text-align: right; */
+  float: left;
+  /* white-space: nowrap; */
+  /* flex-wrap: wrap; */
+}
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
 
