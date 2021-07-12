@@ -10,7 +10,9 @@ Spark is an interactive demo project which is intented to improve the frontend s
 #### In Spark, users will be able to:
 
 • Play notes using the keyboard. (e.g. Press A to play #C note)
+
 • Adjust the type of the sounds. (e.g. square, sine, sawtooth, etc.)
+
 • Drop an envelope(ADSR) on a tone to change it's behaviour. ADSR: Attack, Delay, Sustain, Release.
 
 #### In addition, this project will include:
