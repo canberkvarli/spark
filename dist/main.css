@@ -16,6 +16,7 @@ body {
   margin-top: 100px;
 }
 
+/****************** Lower Deck *****************/
 /* PIANO */
 .lower-container {
   position: relative;
@@ -28,7 +29,7 @@ body {
 }
 
 /* KEYS */
-.white-key {
+.white {
   position: relative;
   border: 0.5px solid black;
   width: 57.91px;
@@ -38,7 +39,7 @@ body {
   background-color: whitesmoke;
 }
 
-.black-key {
+.black {
   width: 29px;
   height: 101px;
   position: absolute;
@@ -47,7 +48,7 @@ body {
   margin-left: 44.9px;
 }
 
-/* **************************** */
+/* ***************** Upper Deck *************** */
 /* FILTERS & DISPLAY */
 .upper-container {
   background-color: #939597;

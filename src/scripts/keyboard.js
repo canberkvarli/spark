@@ -7,8 +7,9 @@ let keyboard = document.querySelector(".lower-container");
 let wavePicker = document.querySelector("select[name='waveform']");
 
 // Keys
-let white = document.querySelector('white-key');
-let black = document.querySelector('black-key');
+let white = document.querySelector('.white key');
+let black = document.querySelector('.black key');
+let keys = document.querySelectorAll('.key')
 
 let mainGainNode = null;
 let volume = document.querySelector('#volume');
@@ -17,6 +18,10 @@ let oscList = [];
 //Event Listeners
 
 volume.addEventListener('change', adjustVolume, false);
+
+keys.forEach((key) => {
+    key.addEventListener('')
+});
 
 
 //FUNCTIONS
