@@ -1,26 +1,29 @@
 //Web Audio API
 let audioContext = new (window.AudioContext || window.webkitAudioContext)();
+let osc = audioContext.createOscillator();
+let mainGainNode = null;
+let oscList = [];
+let filter = auditoContext.createBiquadFilter();
+
 
 //DOM 
 
 let keyboard = document.querySelector(".lower-container");
 let wavePicker = document.querySelector("select[name='waveform']");
+let volume = document.querySelector('#volume');
 
 // Keys
 let white = document.querySelector('.white key');
 let black = document.querySelector('.black key');
 let keys = document.querySelectorAll('.key')
 
-let mainGainNode = null;
-let volume = document.querySelector('#volume');
-let oscList = [];
 
 //Event Listeners
 
 volume.addEventListener('change', adjustVolume, false);
 
 keys.forEach((key) => {
-    key.addEventListener('')
+    key.addEventListener('keydown', playNote);
 });
 
 
@@ -65,6 +68,12 @@ function createNoteTable(){
     }
 }
 
+function playNote(e){
+
+
+
+}
+
 function setupKeyboard(){
 
     noteFreq = createNoteTable();
@@ -81,3 +90,12 @@ function setupKeyboard(){
 
 
 }
+
+
+//TEST//
+
+
+// osc.connect(mainGainNode);
+// mainGainNode.connect(filter);
+// filter.connect(audioContext.destination);
+// osc.start();

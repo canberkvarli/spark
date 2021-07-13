@@ -44,6 +44,7 @@ body {
   height: 101px;
   position: absolute;
   z-index: 1;
+  border: solid 2px grey;
   background-color: black;
   margin-left: 44.9px;
 }
