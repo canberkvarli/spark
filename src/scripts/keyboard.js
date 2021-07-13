@@ -1,18 +1,22 @@
-
-
 //Web Audio API
 let audioContext = new (window.AudioContext || window.webkitAudioContext)();
-// sound source 
-// gain control
-// connect
+
+//DOM 
 
 let keyboard = document.querySelector(".lower-container");
 let wavePicker = document.querySelector("select[name='waveform']");
 
+// Keys
+let white = document.querySelector('white-key');
+let black = document.querySelector('black-key');
+
+let mainGainNode = null;
+let volume = document.querySelector('#volume');
+let oscList = [];
 
 //Event Listeners
 
-
+volume.addEventListener('change', adjustVolume, false);
 
 
 //FUNCTIONS
@@ -56,6 +60,19 @@ function createNoteTable(){
     }
 }
 
-function setup(){
-    
+function setupKeyboard(){
+
+    noteFreq = createNoteTable();
+
+
+    //MAIN GAIN NODE
+    mainGainNode = audioContext.createGain();
+    mainGainNode.connect(audioContext.destination);
+    mainGainNode.gain.value = volume.value;
+
+
+
+
+
+
 }
