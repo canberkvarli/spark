@@ -1,5 +1,5 @@
 body{
-    background-color:rgb(233, 100, 12);
+    background-color:rgb(211, 211, 211);
     
 }
 .keyboard{
@@ -25,6 +25,7 @@ body{
     margin-top: 148px;
     margin-left: -51px;
     box-sizing: border-box;
+    border-radius: 0.5em;
     
 }
 /* KEYS */
@@ -36,7 +37,8 @@ body{
     white-space: nowrap;
     float: left;
     background-color: grey;
-    
+    border-radius: 0.5em;
+    margin-top: 2px;
 }
 
 .black{
@@ -60,6 +62,7 @@ body{
     height: 201px;
     width: 901px;
     box-sizing: border-box;
+    border-radius: 0.5em;
     position: absolute;
     border: black solid 1px;
     margin-right: -40px;

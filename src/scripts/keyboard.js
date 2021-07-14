@@ -1,10 +1,12 @@
-   document.addEventListener('DOMContentLoaded',function(event){
+    document.addEventListener('DOMContentLoaded',function(event){
 
-    
+        //Knob canvas
+        
+
        //Web Audio API
         let audioContext = new (window.AudioContext || window.webkitAudioContext)(); //base contex
         let mainGainNode = audioContext.createGain(); //gain
-        let filter = audioContext.createBiquadFilter(); //effect 
+        let filter = audioContext.createBiquadFilter(); //filter effect 
         let oscList = []; //store key pressed oscilliators
         let noteFreq = {
             //octave-1
@@ -36,16 +38,15 @@
     
         } //key codes & note frequencies
         let volumeControl = document.querySelector("input[name='volume']");
-
-        // let drumSounds = {
-        //     '219': 
-        //     // '221': 
-        //     // '220': 
-        //  };
-
-        //DOM 
         
+        
+       //CONNECTIONS
+
+       mainGainNode.connect(filter);
+       filter.connect(audioContext.destination);
+        //DOM 
     
+
         // let keyboard = document.querySelector(".lower-container");
         let white_keys = document.querySelectorAll('white');
         let black_keys = document.querySelectorAll('black');
@@ -127,10 +128,7 @@
         }
     
 
-        //connections
-        mainGainNode.connect(filter);
-        filter.connect(audioContext.destination);
-
+       
 
 });    
 

@@ -2,7 +2,7 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/styles/piano.css ***!
   \*******************************************************************************************************************************************/
 body {
-  background-color: #e9640c;
+  background-color: lightgray;
 }
 
 .keyboard {
@@ -27,6 +27,7 @@ body {
   margin-top: 148px;
   margin-left: -51px;
   box-sizing: border-box;
+  border-radius: 0.5em;
 }
 
 /* KEYS */
@@ -38,6 +39,8 @@ body {
   white-space: nowrap;
   float: left;
   background-color: grey;
+  border-radius: 0.5em;
+  margin-top: 2px;
 }
 
 .black {
@@ -57,6 +60,7 @@ body {
   height: 201px;
   width: 901px;
   box-sizing: border-box;
+  border-radius: 0.5em;
   position: absolute;
   border: black solid 1px;
   margin-right: -40px;
