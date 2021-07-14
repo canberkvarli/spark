@@ -37,6 +37,7 @@
         } //key codes & note frequencies
     
         //DOM 
+        
     
         // let keyboard = document.querySelector(".lower-container");
         let white_keys = document.querySelectorAll('white');
@@ -46,8 +47,7 @@
         
         //Event Listeners
 
-
-        window.addEventListener('keydown', keyDown);
+        let x = window.addEventListener('keydown', keyDown);
         window.addEventListener('keyup', keyUp);
         waveForm.addEventListener('change', function(event) {
         waveForm = event.target.value;
@@ -105,7 +105,7 @@
         };
     
         function keyUp(e) {
-            const key = (e.keyCode).toString();
+            const key = (e.keyCode).toString(); //55
             if (noteFreq[key] && oscList[key]) {
                 oscList[key].stop();
                 delete oscList[key];

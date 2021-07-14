@@ -6,45 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css"/>
+    <link rel="stylesheet" href="./src/assets/css/all.css">
     <script src="./dist/main.js"></script>
     <title>Spark</title>
 </head>
 
 <body>
+    <h1>Hit your keyboard!</h1>
     <nav>
         <div class="social">
-            <button>Github</button>
+            
+            <button> <a href="https://github.com/canberkvarli">Github</a></button>
             <button>LinkedIn</button>
             <button>Twitter</button>
         </div>
     </nav>
     <div class="keyboard">
         <div class="upper-container">
-            <div class="knob" id="knob-1">
-                <select name="waveform">
-                    <option value="sine" selected>sine</option>
-                    <option value="square">square</option>
-                    <option value="triangle">triangle</option>
-                    <option value="sawtooth">sawtooth</option>E
-                </select>
-                <div class="knob" id="knob-2">
-                    <input type="range" min="0.0" max="100" value="50" class="volume-knob" id="volume">
+            <div class="right">
+                <div class="knob" id="knob-1">
+                    <select name="waveform">
+                        <option value="sine" selected>sine</option>
+                        <option value="square">square</option>
+                        <option value="triangle">triangle</option>
+                        <option value="sawtooth">sawtooth</option>E
+                    </select>
+                    <div class="knob" id="knob-2">
+                        <i class="fas fa-volume-up"></i>
+                        <input type="range" min="0.0" max="1.0" step="0.01" value="0.5" list="volumes" name="volume">
+                        <datalist id="volumes">
+                            <option value="0.0" label="Mute">
+                            <option value="1.0" label="100%">
+                        </datalist>
+                    </div>
+                    <div class="knob" id="knob-3"></div>
+                    <div class="knob" id="knob-4"></div>
+                    <div class="knob" id="knob-5"></div>
+                    <div class="knob" id="knob-6"></div>
                 </div>
-                <div class="knob" id="knob-3"></div>
-                <div class="knob" id="knob-4"></div>
-                <div class="knob" id="knob-5"></div>
-                <div class="knob" id="knob-6"></div>
             </div>
-            <div class="pad">
-                <div id="pad-1"></div>
-                <div id="pad-2"></div>
-                <div id="pad-3"></div>
-                <div id="pad-4"></div>
-                <div id="pad-5"></div>
-                <div id="pad-6"></div>
+            <div class="middle">
+                <div class="pad">
+                    <div id="pad-1"></div>
+                    <div id="pad-2"></div>
+                    <div id="pad-3"></div>
+                    <div id="pad-4"></div>
+                    <div id="pad-5"></div>
+                    <div id="pad-6"></div>
+                </div>
             </div>
-            <div class="display">
-                <!--  -->
+            <div class="left">
+                <div class="display">
+                    <!--  -->
+                </div>
             </div>
         </div> 
             <div class="lower-container">

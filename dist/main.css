@@ -36,7 +36,7 @@ body {
   height: 199px;
   white-space: nowrap;
   float: left;
-  background-color: whitesmoke;
+  background-color: grey;
 }
 
 .black {
@@ -52,7 +52,7 @@ body {
 /* ***************** Upper Deck *************** */
 /* FILTERS & DISPLAY */
 .upper-container {
-  background-color: #939597;
+  background-color: #ffbe99e5;
   height: 201px;
   width: 901px;
   box-sizing: border-box;
@@ -61,6 +61,20 @@ body {
   margin-right: -40px;
   margin-top: -50px;
   margin-left: -52px;
+}
+
+/* Knobs */
+.right {
+  position: relative;
+  width: 301px;
+  height: 201px;
+  margin-left: 598px;
+  border: 1px solid black;
+}
+
+#knob-2 {
+  /* margin: auto; */
+  float: right;
 }
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!

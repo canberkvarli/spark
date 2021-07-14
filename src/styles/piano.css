@@ -15,6 +15,7 @@ body{
 
 /* PIANO */
 .lower-container{
+
     position: relative;
     height: 201px;
     width: 901px;
@@ -31,7 +32,7 @@ body{
     height: 199px;
     white-space: nowrap;
     float: left;
-    background-color: whitesmoke;
+    background-color: grey;
 }
 
 .black{
@@ -49,7 +50,8 @@ body{
 /* FILTERS & DISPLAY */
 
 .upper-container{
-    background-color: #939597;
+
+    background-color: #ffbe99e5;
     height: 201px;
     width: 901px;
     box-sizing: border-box;
@@ -58,4 +60,23 @@ body{
     margin-right: -40px;
     margin-top: -50px;
     margin-left: -52px;
+}
+
+
+
+
+/* Knobs */
+.right{
+    position: relative;
+    width: 301px;
+    height: 201px;
+    margin-left: 598px;
+    border: 1px solid black;
+    
+}
+
+#knob-2{
+    /* margin: auto; */
+    
+    float: right;
 }
