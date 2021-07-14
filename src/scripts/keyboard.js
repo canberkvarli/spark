@@ -39,18 +39,20 @@
         //DOM 
     
         // let keyboard = document.querySelector(".lower-container");
+        let white_keys = document.querySelectorAll('white');
+        let black_keys = document.querySelectorAll('black');
+        let keys = document.querySelectorAll('key');
         let waveForm = document.querySelector("select[name='waveform']");
-        let volume = document.querySelectorAll('volume');
-    
+        
         //Event Listeners
-    
-        window.addEventListener('keydown', keyDown, false);
-        window.addEventListener('keyup', keyUp, false);
 
+
+        window.addEventListener('keydown', keyDown);
+        window.addEventListener('keyup', keyUp);
         waveForm.addEventListener('change', function(event) {
-           waveForm = event.target.value;
+        waveForm = event.target.value;
        });     
-          //FUNCTIONS
+        //FUNCTIONS
     
         // function createNoteTable(){
         //     let noteFreq = [];
@@ -92,12 +94,13 @@
         //     }
         // }
 
-
-    
         function keyDown(e) {
             const key = (e.keyCode).toString(); //key code            
             if (noteFreq[key] && !oscList[key]) {
                 playNote(key);
+                //if noteFreq.includes(white_keys.note_freq){
+                    //changeColor();
+                // }
             }
         };
     
@@ -119,6 +122,8 @@
             oscList[key].start();
         }
     
+
+        //connections
         mainGainNode.connect(filter);
         filter.connect(audioContext.destination);
 
