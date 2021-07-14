@@ -52,12 +52,15 @@
         let keys = document.querySelectorAll('key');
         let waveForm = document.querySelector("select[name='waveform']");
         let snare = document.getElementById('snare');
-        let kick = document.getElementById('kick');
+        let kick = document.getElementsByClassName('kick');
         let hihat = document.getElementsByClassName('hihat');
-        console.log(hihat);
-        // let hihat_source = document.getElementById('hihat');
-        let hihat_audio = hihat[0].children[0];
+            let hihat_audio = hihat[0].children[0];
+            let kick_audio = kick[0].children[0];
         //Event Listeners
+
+        console.log(kick);
+        console.log(kick_audio);
+        console.log(kick[0]);
 
         window.addEventListener('keydown', keyDown);
         window.addEventListener('keyup', keyUp);
@@ -65,14 +68,27 @@
         waveForm.addEventListener('change', function(event) {
         waveForm = event.target.value;
        });    
+
         hihat[0].addEventListener('click', function(e){
         e.preventDefault();
             if (hihat_audio.paused){
                 hihat_audio.play();
-
+                hihat[0].style.color = 'red';
             }else{
                 hihat_audio.pause();
+                hihat[0].style.color = 'black';
             }
+       });
+
+       kick[0].addEventListener('click', function (e) {
+           e.preventDefault();
+           if (kick_audio.paused) {
+               kick_audio.play();
+               kick[0].style.color = 'red';
+           } else {
+               kick_audio.pause();
+               kick[0].style.color = 'black';
+           }
        });
 
         //FUNCTIONS
