@@ -7,13 +7,14 @@ body {
 
 .keyboard {
   height: 401px;
-  width: 901px;
-  border: 0.5px solid black;
+  width: 900px;
+  /* border: 0.5px solid black; */
   padding: 50px;
   margin-left: 160px;
   position: relative;
   box-sizing: border-box;
   margin-top: 100px;
+  /* text-shadow: 0 0 3px #fffafa; */
 }
 
 /****************** Lower Deck *****************/
@@ -22,9 +23,9 @@ body {
   position: relative;
   height: 201px;
   width: 901px;
-  border: 0.5px solid black;
+  /* border: 0.5px solid black; */
   margin-top: 148px;
-  margin-left: -52px;
+  margin-left: -51px;
   box-sizing: border-box;
 }
 
@@ -69,12 +70,62 @@ body {
   width: 301px;
   height: 201px;
   margin-left: 598px;
-  border: 1px solid black;
 }
 
-#knob-2 {
+.left {
+  margin-top: -201px;
+  position: relative;
+  width: 301px;
+  height: 201px;
+  /* margin-bottom: -400px; */
+}
+
+.middle {
+  position: absolute;
+  width: 301px;
+  height: 200px;
+  margin-left: 298px;
+  margin-top: -201px;
+  justify-content: space-between;
+}
+
+.upper-pad {
+  margin-top: 10px;
+  margin-left: 25px;
+  margin-right: 25px;
+  display: flex;
+  justify-content: space-between;
   /* margin: auto; */
+}
+
+.lower-pad {
+  margin-top: 15px;
+  margin-left: 25px;
+  margin-right: 25px;
+  display: flex;
+  justify-content: space-between;
+  /* margin: auto; */
+}
+
+.fa-square.fa-5x {
+  text-shadow: 0 0 3px #FF0000;
+}
+
+#knob-1 {
+  margin-top: 10px;
+  position: absolute;
+}
+
+#volume {
+  margin-top: 5px;
   float: right;
+}
+
+.display {
+  margin-left: 14px;
+  margin-top: 14px;
+  border: solid 3px;
+  margin-right: 14px;
 }
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!

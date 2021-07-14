@@ -2,7 +2,6 @@
 
        //Web Audio API
         let audioContext = new (window.AudioContext || window.webkitAudioContext)(); //base contex
-         //instrument
         let mainGainNode = audioContext.createGain(); //gain
         let filter = audioContext.createBiquadFilter(); //effect 
         let oscList = []; //store key pressed oscilliators
@@ -35,6 +34,7 @@
             '73': 1046.50, //I, C6
     
         } //key codes & note frequencies
+        let volumeControl = document.querySelector("input[name='volume']");
     
         //DOM 
         
@@ -47,11 +47,14 @@
         
         //Event Listeners
 
-        let x = window.addEventListener('keydown', keyDown);
+        window.addEventListener('keydown', keyDown);
         window.addEventListener('keyup', keyUp);
+        window.addEventListener('change', adjustVolume, false);
         waveForm.addEventListener('change', function(event) {
         waveForm = event.target.value;
-       });     
+       });    
+       
+       
         //FUNCTIONS
     
         // function createNoteTable(){
@@ -94,6 +97,9 @@
         //     }
         // }
 
+       function adjustVolume(e) {
+           mainGainNode.gain.value = volumeControl.value
+       }
         function keyDown(e) {
             const key = (e.keyCode).toString(); //key code            
             if (noteFreq[key] && !oscList[key]) {
