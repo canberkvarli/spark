@@ -3,6 +3,7 @@ table, th, td {
 }
 body {
     background-image: url('/src/assets/background/stars_3.jpg');
+    background-color: black;
 }
 .fa-square:before{
     margin: 5px;
