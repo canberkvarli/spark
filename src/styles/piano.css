@@ -12,8 +12,9 @@ body{
     justify-content: center;
     font-family: 'Zen Tokyo Zoo', cursive;
     font-size: 70px;
-    margin: 1px;
-    text-shadow: 1px 1px rgb(248, 84, 234), 2px 1px 10px yellow;
+    margin: 0px;
+    color: rgb(218, 216, 99);
+    text-shadow: 2px 2px 3px rgb(0, 0, 0), 1px 1px 5px rgb(255, 0, 234) ;
 
 }
 .keyboard{
@@ -132,6 +133,7 @@ body{
 .fa-square.fa-5x{
      text-shadow: 0 0 15px #ff5e00fd;
 }
+
 
 
 #knob-1{
