@@ -5,7 +5,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./dist/main.js"></script>
-    <script src="pureknob.js"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css"/>
     <link rel="stylesheet" href="./src/assets/css/all.css">
@@ -13,7 +12,10 @@
 </head>
 
 <body>
-    <h1>Hit your keyboard!</h1>
+    <h1 id="title">Spark</h1>
+    <div id="background">
+
+    
     <nav>
         <div class="social">
             
@@ -35,7 +37,6 @@
         <div class="upper-container">
             <div class="right">
                 <div class="knob" id="knob-1">
-
                     <i class="fas fa-sliders-h"></i>
                     <select name="waveform">
                         <option value="sine" selected>sine</option>
@@ -44,11 +45,20 @@
                         <option value="sawtooth">sawtooth</option>E
                     </select>
                     <div class="knob" id="knob-2">
+                     <canvas id="knob-canvas-2"></canvas>
                     </div>
-                    <div class="knob" id="knob-3"></div>
-                    <div class="knob" id="knob-4"></div>
-                    <div class="knob" id="knob-5"></div>
-                    <div class="knob" id="knob-6"></div>
+                    <div class="knob" id="knob-3">
+                    <canvas id="knob-canvas-3"></canvas>
+                    </div>
+                    <div class="knob" id="knob-4">
+                        <canvas id="knob-canvas-4"></canvas>
+                    </div>
+                    <div class="knob" id="knob-5">
+                        <canvas id="knob-canvas-5"></canvas>
+                    </div>
+                    <div class="knob" id="knob-6">
+                        <canvas id="knob-canvas-6"></canvas>
+                    </div>
                 </div>
             </div>
             <div class="middle">
@@ -87,7 +97,7 @@
         </div> 
             <div class="lower-container">
                     <div class="octave-1">
-                        <div class="white key" data-note="C" data-freq="261.626">
+                        <div class="white" data-note="C" data-freq="261.626">
                             <div class="black key" data-note="C#" data-freq="277.183"></div>
                         </div>
                         <div class="white key" data-note="D" data-freq="293.665">
@@ -131,7 +141,7 @@
                     </div>
         </div>
     </div>
-
+</div>
 </body>
 
 </html>

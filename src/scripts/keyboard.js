@@ -1,9 +1,14 @@
-    document.addEventListener('DOMContentLoaded',function(event){
+document.addEventListener('DOMContentLoaded',function(event){
+    
+    //Knob canvas
+    // let canvas2 = document.getElementById('knob-canvas-2');
+    // let canvas3 = document.getElementById('knob-canvas-3');
+    // let canvas4 = document.getElementById('knob-canvas-4');
+    // let canvas5 = document.getElementById('knob-canvas-5');
+    // let canvas6 = document.getElementById('knob-canvas-6');
 
-        //Knob canvas
-        
-
-       //Web Audio API
+    
+        //Web Audio API
         let audioContext = new (window.AudioContext || window.webkitAudioContext)(); //base contex
         let mainGainNode = audioContext.createGain(); //gain
         let filter = audioContext.createBiquadFilter(); //filter effect 
@@ -45,8 +50,6 @@
        mainGainNode.connect(filter);
        filter.connect(audioContext.destination);
         //DOM 
-    
-
         // let keyboard = document.querySelector(".lower-container");
         let white_keys = document.querySelectorAll('white');
         let black_keys = document.querySelectorAll('black');
@@ -57,12 +60,9 @@
         let hihat = document.getElementsByClassName('hihat');
             let hihat_audio = hihat[0].children[0];
             let kick_audio = kick[0].children[0];
-        //Event Listeners
 
-        console.log(kick);
-        console.log(kick_audio);
-        console.log(kick[0]);
-
+        
+        //EVENT LISTENERS
         window.addEventListener('keydown', keyDown);
         window.addEventListener('keyup', keyUp);
         window.addEventListener('change', adjustVolume, false);
@@ -96,9 +96,9 @@
 
       
 
-       function adjustVolume(e) {
+        function adjustVolume(e) {
            mainGainNode.gain.value = volumeControl.value
-       }
+        }
         function keyDown(e) {
             const key = (e.keyCode).toString(); //key code            
             if (noteFreq[key] && !oscList[key]) {
@@ -128,7 +128,36 @@
         }
     
 
-       
 
+
+
+
+        // CANVAS DRAW KNOBS //
+
+        // let canvasContext2 = canvas2.getContext('2d');
+        // canvasContext2.beginPath();
+        // canvasContext2.arc(50, 40, 30, 0, 2 * Math.PI);
+        // canvasContext2.stroke();
+    
+        // let canvasContext3 = canvas3.getContext('2d');
+        // canvasContext3.beginPath();
+        // canvasContext3.arc(50, 0, 30, 0, 2 * Math.PI);
+        // canvasContext3.stroke();
+
+        // let canvasContext4 = canvas4.getContext('2d');
+        // canvasContext4.beginPath();
+        // canvasContext4.arc(50, 40, 30, 0, 2 * Math.PI);
+        // canvasContext4.stroke();
+
+        // let canvasContext5 = canvas5.getContext('2d');
+        // canvasContext5.beginPath();
+        // canvasContext5.arc(50, 40, 30, 0, 2 * Math.PI);
+        // canvasContext5.stroke();
+
+        // let canvasContext6 = canvas6.getContext('2d');
+        // canvasContext6.beginPath();
+        // canvasContext6.arc(50, 40, 30, 0, 2 * Math.PI);
+        // canvasContext6.stroke();
+       
 });    
 

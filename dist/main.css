@@ -2,7 +2,18 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/styles/piano.css ***!
   \*******************************************************************************************************************************************/
 body {
-  background-color: lightgray;
+  background-color: #f55a00;
+}
+
+#background {
+  background-color: teal;
+  height: 800px;
+  margin: 30px;
+}
+
+#title {
+  display: flex;
+  justify-content: center;
 }
 
 .keyboard {
