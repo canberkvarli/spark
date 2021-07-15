@@ -1,15 +1,20 @@
 body{
-    background-color:rgb(245, 90, 0);
+    background-image: url('/src/assets/background/stars_3.jpg');
 }
 #background{
     background-color: teal;
+    background-image: url('/src/assets/background/stars_1.jpg');
     height: 800px;
     margin: 30px;
 }
 #title{
     display: flex;
     justify-content: center;
-    
+    font-family: 'Zen Tokyo Zoo', cursive;
+    font-size: 70px;
+    margin: 1px;
+    text-shadow: 1px 1px rgb(248, 84, 234), 2px 1px 10px yellow;
+
 }
 .keyboard{
     height: 401px;

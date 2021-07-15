@@ -2,11 +2,12 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/styles/piano.css ***!
   \*******************************************************************************************************************************************/
 body {
-  background-color: #f55a00;
+  background-image: url("/src/assets/background/stars_3.jpg");
 }
 
 #background {
   background-color: teal;
+  background-image: url("/src/assets/background/stars_1.jpg");
   height: 800px;
   margin: 30px;
 }
@@ -14,6 +15,10 @@ body {
 #title {
   display: flex;
   justify-content: center;
+  font-family: "Zen Tokyo Zoo", cursive;
+  font-size: 70px;
+  margin: 1px;
+  text-shadow: 1px 1px #f854ea, 2px 1px 10px yellow;
 }
 
 .keyboard {
