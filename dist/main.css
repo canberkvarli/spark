@@ -1,6 +1,7 @@
 /*!*******************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/styles/piano.css ***!
   \*******************************************************************************************************************************************/
+@charset "UTF-8";
 body {
   background-image: url("/src/assets/background/stars_3.jpg");
 }
@@ -41,6 +42,13 @@ input[type=range]::-webkit-slider-thumb {
   background-image: url("/src/assets/background/stars_1.jpg");
   height: 800px;
   margin: 30px;
+}
+
+#instructions {
+  margin-top: -5px;
+  content: "";
+  position: absolute;
+  margin-left: 166px;
 }
 
 #title {

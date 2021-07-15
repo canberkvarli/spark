@@ -40,6 +40,13 @@ input[type=range]::-webkit-slider-thumb {
     margin: 30px;
 }
 
+#instructions{
+    margin-top: -5px;
+    content: "";
+    position: absolute;
+    margin-left: 166px;
+    
+}
 
 #title{
     display: flex;

@@ -68,7 +68,8 @@ document.addEventListener('DOMContentLoaded',function(event){
         let hihat = document.getElementsByClassName('hihat');
             let hihat_audio = hihat[0].children[0];
             let kick_audio = kick[0].children[0];
-
+        let instructions_page = document.getElementById('instructions');
+        console.log(instructions_page);
         //EVENT LISTENERS
         window.addEventListener('keydown', keyDown);
         window.addEventListener('keyup', keyUp);
