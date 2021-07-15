@@ -122,9 +122,11 @@ document.addEventListener('DOMContentLoaded',function(event){
                 //white or black?
                 console.log(ele);
                 if(ele[0].className === 'white key'){
-                    ele[0].style.backgroundColor = 'red';
+                    ele[0].style.backgroundColor = 'whitesmoke';
+                    ele[0].style.boxShadow = "0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(218, 216, 99)";
                 }else if(ele[0].className === 'black key'){
                     ele[0].style.backgroundColor = 'yellow';
+                    ele[0].style.boxShadow = "0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(218, 216, 99)";
                 };
             }
         };
@@ -139,8 +141,10 @@ document.addEventListener('DOMContentLoaded',function(event){
                 //white or black?
                 if (ele[0].className === 'white key') {
                     ele[0].style.backgroundColor = 'grey';
+                    ele[0].style.boxShadow = 'none';
                 } else if (ele[0].className === 'black key') {
                     ele[0].style.backgroundColor = '#3d004e';
+                    ele[0].style.boxShadow = 'none';
                 };
             }
 
