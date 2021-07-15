@@ -113,6 +113,7 @@ input[type=range]::-webkit-slider-thumb {
   margin-right: -40px;
   margin-top: -50px;
   margin-left: -52px;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #dad863, 0 0 82px #dad863, 0 0 92px #dad863;
 }
 
 /* Knobs */

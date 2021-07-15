@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded',function(event){
         //Web Audio API
         let audioContext = new (window.AudioContext || window.webkitAudioContext)(); //base contex
         let mainGainNode = audioContext.createGain(); //gain
-        let filter = audioContext.createBiquadFilter(); //filter effect 
         let oscList = []; //store key pressed oscilliators
+        let filter = audioContext.createBiquadFilter();
         let noteFreq = {
             //octave-1
             '90': 261.626, //Z, C4
@@ -52,8 +52,11 @@ document.addEventListener('DOMContentLoaded',function(event){
         
        //CONNECTIONS
 
-       mainGainNode.connect(filter);
-       filter.connect(audioContext.destination);
+        mainGainNode.connect(filter);
+        filter.connect(audioContext.destination);
+        
+
+    
         //DOM 
         // let keyboard = document.querySelector(".lower-container");
         let white_keys = document.getElementsByClassName('white key');
@@ -65,7 +68,7 @@ document.addEventListener('DOMContentLoaded',function(event){
         let hihat = document.getElementsByClassName('hihat');
             let hihat_audio = hihat[0].children[0];
             let kick_audio = kick[0].children[0];
-    
+
         //EVENT LISTENERS
         window.addEventListener('keydown', keyDown);
         window.addEventListener('keyup', keyUp);
@@ -101,20 +104,28 @@ document.addEventListener('DOMContentLoaded',function(event){
 
         //FUNCTIONS
 
+ 
 
         function adjustVolume(e) {
            mainGainNode.gain.value = volumeControl.value
-        }
+        };
+        
+
+        //DOM element by data-freq
+        
         function keyDown(e) {
             const key = (e.keyCode).toString(); //key code            
             if (noteFreq[key] && !oscList[key]) {
-             
                 playNote(key);
-                if(noteFreq[key] === white_keys[0].dataset.freq){
-                    let element = document.querySelectorAll('[data-freq]');
-                    element.style.color = "red";
-                }
-                    
+                let freq = noteFreq[key].toString();
+                let ele = document.querySelectorAll(`[data-freq = '${freq}']`);
+                //white or black?
+                console.log(ele);
+                if(ele[0].className === 'white key'){
+                    ele[0].style.backgroundColor = 'red';
+                }else if(ele[0].className === 'black key'){
+                    ele[0].style.backgroundColor = 'yellow';
+                };
             }
         };
     
@@ -123,6 +134,14 @@ document.addEventListener('DOMContentLoaded',function(event){
             if (noteFreq[key] && oscList[key]) {
                 oscList[key].stop();
                 delete oscList[key];
+                let freq = noteFreq[key].toString();
+                let ele = document.querySelectorAll(`[data-freq = '${freq}']`);
+                //white or black?
+                if (ele[0].className === 'white key') {
+                    ele[0].style.backgroundColor = 'grey';
+                } else if (ele[0].className === 'black key') {
+                    ele[0].style.backgroundColor = '#3d004e';
+                };
             }
 
         };
@@ -136,8 +155,13 @@ document.addEventListener('DOMContentLoaded',function(event){
             oscList[key].start();
         }
     
-        function changeColor(){
-            
+        
+        function applyFilter(){
+             //filter effect 
+                mainGainNode.connect(filter);
+                filter.connect(audioContext.destination);
         }
+
+
 });    
 
