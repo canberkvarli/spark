@@ -62,7 +62,7 @@ input[type=range]::-webkit-slider-thumb {
 #instructions-icon{
     margin-top: -5px;
     position: absolute;
-    margin-left: 147px;
+    margin-left: 142px;
     cursor: pointer;
     
 }
@@ -163,16 +163,12 @@ input[type=range]::-webkit-slider-thumb {
     box-sizing: border-box;
     border-radius: 0.5em;
     position: absolute;
-    border: black solid 1px;
+    border-top-color: darkred;
+    border: rgb(255, 102, 0) solid 4px;
     margin-right: -40px;
     margin-top: -50px;
     margin-left: -52px;
-    text-shadow: 0 0 7px #fff, 
-    0 0 10px #fff, 
-    0 0 21px #fff, 
-    0 0 42px rgb(218 216 99), 
-    0 0 82px rgb(218 216 99), 
-    0 0 92px rgb(218 216 99);
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #dad863, 0 0 82px #dad863, 0 0 92px #dad863;
 }
 
 /* Knobs */

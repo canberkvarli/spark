@@ -68,7 +68,7 @@ input[type=range]::-webkit-slider-thumb {
 #instructions-icon {
   margin-top: -5px;
   position: absolute;
-  margin-left: 147px;
+  margin-left: 142px;
   cursor: pointer;
 }
 
@@ -168,7 +168,8 @@ input[type=range]::-webkit-slider-thumb {
   box-sizing: border-box;
   border-radius: 0.5em;
   position: absolute;
-  border: black solid 1px;
+  border-top-color: darkred;
+  border: #ff6600 solid 4px;
   margin-right: -40px;
   margin-top: -50px;
   margin-left: -52px;
