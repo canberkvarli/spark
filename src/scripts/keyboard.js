@@ -58,19 +58,19 @@ document.addEventListener('DOMContentLoaded',function(event){
 
     
         //DOM 
-        // let keyboard = document.querySelector(".lower-container");
-        let white_keys = document.getElementsByClassName('white key');
-        let black_keys = document.getElementsByClassName('black key');
-        let keys = document.querySelectorAll('key');
+        // let white_keys = document.getElementsByClassName('white key');
+        // let black_keys = document.getElementsByClassName('black key');
+        // let keys = document.querySelectorAll('key');
         let waveForm = document.querySelector("select[name='waveform']");
-        let snare = document.getElementById('snare');
+        // let snare = document.getElementById('snare');
         let kick = document.getElementsByClassName('kick');
         let hihat = document.getElementsByClassName('hihat');
             let hihat_audio = hihat[0].children[0];
-            let kick_audio = kick[0].children[0];
-        let instructions_page = document.getElementById('instructions');
-        console.log(instructions_page);
-        //EVENT LISTENERS
+            let kick_audio = kick[0].children[0];  
+        let instructions_icon = document.getElementById('instructions-icon');
+        let instructions_modal = document.getElementById('instructions-modal');
+
+        //************* EVENT LISTENERS ****************
         window.addEventListener('keydown', keyDown);
         window.addEventListener('keyup', keyUp);
         window.addEventListener('change', adjustVolume, false);
@@ -79,7 +79,18 @@ document.addEventListener('DOMContentLoaded',function(event){
        });    
 
        
+       instructions_icon.addEventListener('click', function(e){
+           instructions_modal.style.display = "block";
+           console.log(instructions_icon);
+           console.log(instructions_modal);
+       });
 
+        window.onclick = function (event) {
+            if (event.target == instructions_modal) {
+                console.log(event);
+                instructions_modal.style.display = "none";
+        }
+    };
 
         hihat[0].addEventListener('click', function(e){
         e.preventDefault();
@@ -103,17 +114,15 @@ document.addEventListener('DOMContentLoaded',function(event){
            }
        });
 
-        //FUNCTIONS
-
- 
+        //****************** FUNCTIONS *************************
 
         function adjustVolume(e) {
            mainGainNode.gain.value = volumeControl.value
         };
         
 
-        //DOM element by data-freq
         
+        //DOM element by data-freq
         function keyDown(e) {
             const key = (e.keyCode).toString(); //key code            
             if (noteFreq[key] && !oscList[key]) {
@@ -148,7 +157,6 @@ document.addEventListener('DOMContentLoaded',function(event){
                     ele[0].style.boxShadow = 'none';
                 };
             }
-
         };
     
         function playNote(key) {

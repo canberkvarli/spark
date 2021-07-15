@@ -33,12 +33,11 @@
             <option value="1.0" label="100%">
         </datalist>
     </div>
-
     <div class="keyboard">
         <div class="upper-container">
             <div class="right">
                 <div class="knob" id="knob-1">
-                    <i class="fas fa-sliders-h"></i>
+                    <i class="fas fa-sliders-h fa-2x"></i>
                     <select name="waveform">
                         <option value="sine" selected>sine</option>
                         <option value="square">square</option>
@@ -48,7 +47,29 @@
                     <!-- <label for="filter">Filter:
                         <input id="filter" type="radio" name="filter_freq">
                     </label> -->
-                    <i id="instructions" class="far fa-question-circle fa-2x"></i>
+                    <i id="instructions-icon" class="far fa-question-circle fa-2x"></i>
+                        <div id="instructions-modal" class="modal">
+                            <div class="modal-content">
+                                <h1 class="instructions-info" id="instructions">INSTRUCTIONS</h1>
+                                <span class="instructions-info"><p>Welcome to Spark</p></span>
+                                <p id="intro" class="instructions-info"> Here you can free your mind and let your-self flow into the unknown world of music!</p>
+                                
+                                <ul>
+                                <li class="instructions-info">With Spark, you can interact with an oscilliator by pressing your keyboard keys which will activate a note! (e.g. press
+                                'Z' to play C note)</li>
+                                <li class="instructions-info">Click on the pads to play drum loops. For this purpose of the demonstration, they are already set to 120 bpm.
+                                    <div id="pads-modal">
+                                        <i class="fas fa-square fa-3x"></i>
+                                    </div>
+                                </li>
+                                <li class="instructions-info">
+                                    You can select the frequency wave by selecting the waveform here!
+                                    <i class="fas fa-sliders-h fa-2x"></i>
+                                </li>
+                                </ul>
+                            </div>
+                        </div>
+
                     <div class="knob" id="knob-2">
                      <canvas id="knob-canvas-2"></canvas>
                      
