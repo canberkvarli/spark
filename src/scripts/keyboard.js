@@ -1,20 +1,7 @@
 document.addEventListener('DOMContentLoaded',function(event){
 
-    
-   
-    // white_keys[0].addEventListener('keydown', function(e){
-    //     e.preventDefault();
-    // });
-
-    //Knob canvas
-    // let canvas2 = document.getElementById('knob-canvas-2');
-    // let canvas3 = document.getElementById('knob-canvas-3');
-    // let canvas4 = document.getElementById('knob-canvas-4');
-    // let canvas5 = document.getElementById('knob-canvas-5');
-    // let canvas6 = document.getElementById('knob-canvas-6');
-
         //Web Audio API
-        let audioContext = new (window.AudioContext || window.webkitAudioContext)(); //base contex
+        let audioContext = new (window.AudioContext || window.webkitAudioContext)(); //base Audio context
         let mainGainNode = audioContext.createGain(); //gain
         let oscList = []; //store key pressed oscilliators
         let filter = audioContext.createBiquadFilter();
@@ -58,15 +45,13 @@ document.addEventListener('DOMContentLoaded',function(event){
 
     
         //DOM 
-        // let white_keys = document.getElementsByClassName('white key');
-        // let black_keys = document.getElementsByClassName('black key');
-        // let keys = document.querySelectorAll('key');
+       
         let waveForm = document.querySelector("select[name='waveform']");
-        // let snare = document.getElementById('snare');
         let kick = document.getElementsByClassName('kick');
         let hihat = document.getElementsByClassName('hihat');
             let hihat_audio = hihat[0].children[0];
             let kick_audio = kick[0].children[0];  
+
         let instructions_icon = document.getElementById('instructions-icon');
         let instructions_modal = document.getElementById('instructions-modal');
 
@@ -86,7 +71,7 @@ document.addEventListener('DOMContentLoaded',function(event){
        });
 
         window.onclick = function (event) {
-            if (event.target == instructions_modal) {
+            if (event.target === instructions_modal) {
                 console.log(event);
                 instructions_modal.style.display = "none";
         }
@@ -146,6 +131,7 @@ document.addEventListener('DOMContentLoaded',function(event){
             if (noteFreq[key] && oscList[key]) {
                 oscList[key].stop();
                 delete oscList[key];
+                console.log(oscList);
                 let freq = noteFreq[key].toString();
                 let ele = document.querySelectorAll(`[data-freq = '${freq}']`);
                 //white or black?
@@ -160,19 +146,12 @@ document.addEventListener('DOMContentLoaded',function(event){
         };
     
         function playNote(key) {
-            const osc = audioContext.createOscillator();
+            const osc = audioContext.createOscillator(); //instrument (oscilliator)
             osc.frequency.setValueAtTime(noteFreq[key], audioContext.currentTime);
             osc.type = waveForm; //selected waveform
-            oscList[key] = osc;
+            oscList[key] = osc; //261
             oscList[key].connect(mainGainNode); //sound connected
             oscList[key].start();
-        }
-    
-        
-        function applyFilter(){
-             //filter effect 
-                mainGainNode.connect(filter);
-                filter.connect(audioContext.destination);
         }
 
 
