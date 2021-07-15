@@ -8,7 +8,7 @@ body {
 .volume-slider {
   -webkit-appearance: none;
   width: 70%;
-  height: 15px;
+  height: 7.5px;
   background: #000;
   outline: none;
   border: 5px solid lawngreen;
@@ -17,8 +17,9 @@ body {
 }
 
 .fas.fa-volume-up {
+  margin: 2px;
   color: lawngreen;
-  size: 20px;
+  size: 10px;
 }
 
 input[type=range]::-webkit-slider-thumb {
@@ -29,7 +30,7 @@ input[type=range]::-webkit-slider-thumb {
   border-radius: 3px;
   background: #ffffff;
   cursor: pointer;
-  margin-top: -10px;
+  margin-top: -12px;
   /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   /* Add cool effects to your sliders! */
