@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded',function(event){
+
     
+   
+    // white_keys[0].addEventListener('keydown', function(e){
+    //     e.preventDefault();
+    // });
 
     //Knob canvas
     // let canvas2 = document.getElementById('knob-canvas-2');
@@ -8,7 +13,6 @@ document.addEventListener('DOMContentLoaded',function(event){
     // let canvas5 = document.getElementById('knob-canvas-5');
     // let canvas6 = document.getElementById('knob-canvas-6');
 
-    
         //Web Audio API
         let audioContext = new (window.AudioContext || window.webkitAudioContext)(); //base contex
         let mainGainNode = audioContext.createGain(); //gain
@@ -52,8 +56,8 @@ document.addEventListener('DOMContentLoaded',function(event){
        filter.connect(audioContext.destination);
         //DOM 
         // let keyboard = document.querySelector(".lower-container");
-        let white_keys = document.querySelectorAll('white');
-        let black_keys = document.querySelectorAll('black');
+        let white_keys = document.getElementsByClassName('white key');
+        let black_keys = document.getElementsByClassName('black key');
         let keys = document.querySelectorAll('key');
         let waveForm = document.querySelector("select[name='waveform']");
         let snare = document.getElementById('snare');
@@ -61,8 +65,7 @@ document.addEventListener('DOMContentLoaded',function(event){
         let hihat = document.getElementsByClassName('hihat');
             let hihat_audio = hihat[0].children[0];
             let kick_audio = kick[0].children[0];
-
-        
+    
         //EVENT LISTENERS
         window.addEventListener('keydown', keyDown);
         window.addEventListener('keyup', keyUp);
@@ -70,6 +73,9 @@ document.addEventListener('DOMContentLoaded',function(event){
         waveForm.addEventListener('change', function(event) {
         waveForm = event.target.value;
        });    
+
+       
+
 
         hihat[0].addEventListener('click', function(e){
         e.preventDefault();
@@ -102,10 +108,13 @@ document.addEventListener('DOMContentLoaded',function(event){
         function keyDown(e) {
             const key = (e.keyCode).toString(); //key code            
             if (noteFreq[key] && !oscList[key]) {
+             
                 playNote(key);
-                //if noteFreq.includes(white_keys.note_freq){
-                    //changeColor();
-                // }
+                if(noteFreq[key] === white_keys[0].dataset.freq){
+                    let element = document.querySelectorAll('[data-freq]');
+                    element.style.color = "red";
+                }
+                    
             }
         };
     
@@ -127,7 +136,7 @@ document.addEventListener('DOMContentLoaded',function(event){
             oscList[key].start();
         }
     
-        function display(){
+        function changeColor(){
             
         }
 });    

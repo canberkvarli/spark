@@ -57,13 +57,11 @@ input[type=range]::-webkit-slider-thumb {
 .keyboard {
   height: 401px;
   width: 900px;
-  /* border: 0.5px solid black; */
-  padding: 50px;
-  margin-left: 160px;
+  padding: 1px;
+  margin-left: 180px;
   position: relative;
   box-sizing: border-box;
-  margin-top: 100px;
-  /* text-shadow: 0 0 3px #fffafa; */
+  margin-top: -10px;
 }
 
 /****************** Lower Deck *****************/
@@ -175,17 +173,17 @@ input[type=range]::-webkit-slider-thumb {
 
 #github {
   text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #dad863, 0 0 82px #dad863, 0 0 92px #dad863;
-  margin: 6px;
+  margin: 20px;
 }
 
 #twitter {
   text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #dad863, 0 0 82px #dad863, 0 0 92px #dad863;
-  margin: 6px;
+  margin: 20px;
 }
 
 #linkedin {
   text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #dad863, 0 0 82px #dad863, 0 0 92px #dad863;
-  margin: 6px;
+  margin: 20px;
 }
 
 #knob-1 {
@@ -194,7 +192,8 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 #volume {
-  margin-top: 5px;
+  margin-top: -151px;
+  margin-right: 136px;
   float: right;
 }
 
