@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded',function(event){
     
+
     //Knob canvas
     // let canvas2 = document.getElementById('knob-canvas-2');
     // let canvas3 = document.getElementById('knob-canvas-3');
@@ -94,7 +95,6 @@ document.addEventListener('DOMContentLoaded',function(event){
 
         //FUNCTIONS
 
-      
 
         function adjustVolume(e) {
            mainGainNode.gain.value = volumeControl.value
@@ -127,37 +127,8 @@ document.addEventListener('DOMContentLoaded',function(event){
             oscList[key].start();
         }
     
-
-
-
-
-
-        // CANVAS DRAW KNOBS //
-
-        // let canvasContext2 = canvas2.getContext('2d');
-        // canvasContext2.beginPath();
-        // canvasContext2.arc(50, 40, 30, 0, 2 * Math.PI);
-        // canvasContext2.stroke();
-    
-        // let canvasContext3 = canvas3.getContext('2d');
-        // canvasContext3.beginPath();
-        // canvasContext3.arc(50, 0, 30, 0, 2 * Math.PI);
-        // canvasContext3.stroke();
-
-        // let canvasContext4 = canvas4.getContext('2d');
-        // canvasContext4.beginPath();
-        // canvasContext4.arc(50, 40, 30, 0, 2 * Math.PI);
-        // canvasContext4.stroke();
-
-        // let canvasContext5 = canvas5.getContext('2d');
-        // canvasContext5.beginPath();
-        // canvasContext5.arc(50, 40, 30, 0, 2 * Math.PI);
-        // canvasContext5.stroke();
-
-        // let canvasContext6 = canvas6.getContext('2d');
-        // canvasContext6.beginPath();
-        // canvasContext6.arc(50, 40, 30, 0, 2 * Math.PI);
-        // canvasContext6.stroke();
-       
+        function display(){
+            
+        }
 });    
 

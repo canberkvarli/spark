@@ -19,15 +19,14 @@
     <div id="background">
     <nav>
         <div class="social">
-            
-            <button> <a href="https://github.com/canberkvarli">Github</a></button>
-            <button>LinkedIn</button>
-            <button>Twitter</button>
+            <span id="github"><a href="https://github.com/canberkvarli"><i class="fab fa-github-square fa-2x" style="color:black"></i></a></span>
+            <span id="twitter"><a href="https://twitter.com/VARLICanberk"><i class="fab fa-twitter-square fa-2x" style="color:lightskyblue"></i></a></span>
+            <span id="linkedin"><a href="https://www.linkedin.com/in/canberkvarli/"><i class="fab fa-linkedin fa-2x" style="color:lightsalmon"></i></a></span>
         </div>
     </nav>
     <div id="volume">
-        <i class="fas fa-volume-up"></i>
-        <input type="range" min="0.0" max="1.0" step="0.01" value="0.5" list="volumes" name="volume">
+        <i class="fas fa-volume-up fa-2x"></i>
+        <input class="volume-slider"type="range" min="0.0" max="1.0" step="0.01" value="0.5" list="volumes" name="volume">
         <datalist id="volumes">
             <option value="0.0" label="Mute">
             <option value="1.0" label="100%">
