@@ -30,10 +30,8 @@ Spark is an interactive demo project which is intented to improve the frontend s
   – Sign up and be able to save uniquely created sounds.
   – Sign in and be able to play existing recordings.
   
-• Record and Play buttons
-
-• Drum pads on the keyboard
-
+• Record and Play buttons  
+• Add an Envelope filter  
 
 ## Wireframes
 
@@ -55,10 +53,10 @@ Spark is an interactive demo project which is intented to improve the frontend s
 • Press keys to start and stop the sound.  
 • UI  
 **Tuesday 07/13**  
-• Setup the options to be able to change the type of the sound from the knob.  
-• Add an Envelope filter.  
+• Setup the options to be able to change the type of the sound from the knob. (Future functionality)   
 • UI  
 **Wednesday 07/13**  
+• Drum pads on the keyboard  
 • UI  
 • Test  
 **Thursday 07/14**  
