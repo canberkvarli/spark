@@ -71,6 +71,7 @@ input[type=range]::-webkit-slider-thumb {
   position: absolute;
   margin-left: 142px;
   cursor: pointer;
+  animation: flicker 1.5s infinite alternate;
 }
 
 #instructions-modal {
@@ -264,6 +265,15 @@ input[type=range]::-webkit-slider-thumb {
   margin-top: 14px;
   border: solid 3px;
   margin-right: 14px;
+}
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px red, 0 0 80px red, 0 0 90px red, 0 0 100px red, 0 0 550px red;
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+  }
 }
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
