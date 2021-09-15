@@ -169,10 +169,6 @@ document.addEventListener('DOMContentLoaded', function(event){
         
         //****************** FUNCTIONS *************************
         
-        function adjustVolume(e) {
-            noteGain.gain.value = volumeControl.value
-        };
-        
         
         
         //DOM element by data-freq
@@ -233,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function(event){
                 noteGain.gain.linearRampToValueAtTime(sustainLevel, audioCtx.currentTime + attackTime);
                 noteGain.gain.setValueAtTime(sustainLevel, audioCtx.currentTime + 1 - releaseTime);
                 noteGain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 5);
-                
+                noteGain.gain.value = volumeControl.value
                 osc.frequency.setValueAtTime(noteFreq[key], audioCtx.currentTime);
                 osc.type = waveForm; //selected waveform
                 oscList[key] = osc; //261
@@ -244,6 +240,10 @@ document.addEventListener('DOMContentLoaded', function(event){
        
             
         }
+         function adjustVolume(e) {
+            noteGain.gain.value = volumeControl.value
+        };
+        
         //CONNECTIONS
     
          noteGain.connect(filter);
