@@ -80,7 +80,7 @@ input[type=range]::-webkit-slider-thumb {
   /* Hidden by default */
   position: fixed;
   /* Stay in place */
-  z-index: 2;
+  z-index: 125;
   /* Sit on top */
   left: 0;
   top: 0;
@@ -155,7 +155,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 #container{
-  z-index: 123;
+  z-index: 3;
   position: absolute;
   height: 187px;
   margin-left: 3px;
