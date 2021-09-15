@@ -13,7 +13,7 @@
 
 • Adjust the type of the sounds. (e.g. square, sine, sawtooth, etc.)
 
-• Drop an envelope(ADSR) on a tone to change it's behaviour. ADSR: Attack, Delay, Sustain, Release.
+• Implement an Envelope.
 
 #### In addition, this project will include:
 
