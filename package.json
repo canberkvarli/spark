@@ -39,6 +39,9 @@
   "@material/menu": "^12.0.0",
     
       
+  "audiomotion-analyzer": "^3.5.1",
+    
+      
   "babel-loader": "^8.2.2",
     
       

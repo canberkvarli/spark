@@ -1,3 +1,5 @@
+import AudioMotionAnalyzer from 'audiomotion-analyzer';
+
 document.addEventListener('DOMContentLoaded', function(event){
         //Web Audio API
         let audioContext = new (window.AudioContext || window.webkitAudioContext)(); //base Audio context
@@ -84,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function(event){
                 hihat_audio.pause();
                 hihat[0].style.color = 'black';
             }
+            audioMotion.connectInput(hihat_audio);
         });
         
         kick[0].addEventListener('click', function (e) {
@@ -95,6 +98,7 @@ document.addEventListener('DOMContentLoaded', function(event){
                 kick_audio.pause();
                 kick[0].style.color = 'black';
             }
+            audioMotion.connectInput(kick_audio);
         });
         
         attackControl.addEventListener('input', function(){
@@ -153,31 +157,36 @@ document.addEventListener('DOMContentLoaded', function(event){
                 };
             }
         };
-        
+         
+            // AUDIO VISUALIZER
+        const audioMotion = new AudioMotionAnalyzer( document.getElementById('container') )
+
         function playNote(key) {
-            const osc = audioContext.createOscillator(); //instrument (oscilliator)
-            
+            const audioCtx = audioMotion.audioCtx;
+            const osc = audioCtx.createOscillator(),
+            noteGain = audioCtx.createGain();
+            // const osc = audioContext.createOscillator(); //instrument (oscilliator)
             
                 noteGain.gain.setValueAtTime(0, 0);
-                noteGain.gain.linearRampToValueAtTime(sustainLevel, audioContext.currentTime + attackTime);
-                noteGain.gain.setValueAtTime(sustainLevel, audioContext.currentTime + 1 - releaseTime);
-                noteGain.gain.linearRampToValueAtTime(0, audioContext.currentTime + 5);
+                noteGain.gain.linearRampToValueAtTime(sustainLevel, audioCtx.currentTime + attackTime);
+                noteGain.gain.setValueAtTime(sustainLevel, audioCtx.currentTime + 1 - releaseTime);
+                noteGain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 5);
                 
-                osc.frequency.setValueAtTime(noteFreq[key], audioContext.currentTime);
+                osc.frequency.setValueAtTime(noteFreq[key], audioCtx.currentTime);
                 osc.type = waveForm; //selected waveform
                 oscList[key] = osc; //261
                 oscList[key].connect(noteGain); //sound connected
+                audioMotion.connectInput(noteGain);
                 oscList[key].start();
-            
-            
+                // oscList[key].stop(audiContext.currentTime + 1);
+       
             
         }
         //CONNECTIONS
     
          noteGain.connect(filter);
          filter.connect(audioContext.destination);
-         
-        
+ 
     });    
 
     
