@@ -17,7 +17,8 @@
 
 #### In addition, this project will include:
 
-• Instructions on how to enlight your musical mind.
+• Instructions on how to enlight your musical mind.  
+ 
 • README.md
 
 
