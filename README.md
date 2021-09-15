@@ -26,13 +26,7 @@
 • Wavelength Display: (COMPLETED ON 09/14/21)
   – Unwind the eyes as the wavelength display will dance while playing with sounds.
   
-• User Accounts:
-  – Sign up and be able to save uniquely created sounds.
-  – Sign in and be able to play existing recordings.
-  
 • Record and Play buttons  
-• Add an Envelope filter (COMPLETED ON 09/14/21)
-
 ## Wireframes
 
 ![spark_wireframe](https://user-images.githubusercontent.com/25483888/125225888-dca08580-e284-11eb-8c9e-553d94356d7d.png)
