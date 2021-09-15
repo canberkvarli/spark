@@ -17,7 +17,8 @@
 
 #### In addition, this project will include:
 
-• Instructions on how to enlight your musical mind.
+• Instructions on how to enlight your musical mind.  
+ 
 • README.md
 
 
@@ -26,25 +27,16 @@
 • Wavelength Display: (COMPLETED ON 09/14/21)
   – Unwind the eyes as the wavelength display will dance while playing with sounds.
   
-• User Accounts:
-  – Sign up and be able to save uniquely created sounds.
-  – Sign in and be able to play existing recordings.
-  
 • Record and Play buttons  
-• Add an Envelope filter (COMPLETED ON 09/14/21)
-
 ## Wireframes
 
 ![spark_wireframe](https://user-images.githubusercontent.com/25483888/125225888-dca08580-e284-11eb-8c9e-553d94356d7d.png)
 
 ## Technologies, Libraries, APIs
 
-• [Canvas api](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) to render the keyboard.
-
 • [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) for the Osciliator, gain controls, envelope and many more features to play the sound from the browser.
 
-• [tones.js](http://bit101.github.io/tones/) is a web audio framework which will offer many common features that in any DAW(Digital Audio Workstation).
-
+• [audioMotion-analyzer](https://audiomotion.dev/#/) is a high-resolution real-time audio spectrum analyzer.  
 
 ## Implementation Timeline
 
