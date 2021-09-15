@@ -23,7 +23,7 @@
 
 ### Future Implementations
 
-• Wavelength Display: 
+• Wavelength Display: (COMPLETED ON 09/14/21)
   – Unwind the eyes as the wavelength display will dance while playing with sounds.
   
 • User Accounts:
@@ -31,7 +31,7 @@
   – Sign in and be able to play existing recordings.
   
 • Record and Play buttons  
-• Add an Envelope filter  
+• Add an Envelope filter (COMPLETED ON 09/14/21)
 
 ## Wireframes
 
