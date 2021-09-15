@@ -1,6 +1,7 @@
 import AudioMotionAnalyzer from 'audiomotion-analyzer';
 
 document.addEventListener('DOMContentLoaded', function(event){
+        console.log = function() {};
         //Web Audio API
         let audioContext = new (window.AudioContext || window.webkitAudioContext)(); //base Audio context
         let noteGain = audioContext.createGain(); //gain
@@ -76,13 +77,13 @@ document.addEventListener('DOMContentLoaded', function(event){
         
         instructions_icon.addEventListener('click', function(e){
             instructions_modal.style.display = "block";
-            console.log(instructions_icon);
-            console.log(instructions_modal);
+            // console.log(instructions_icon);
+            // console.log(instructions_modal);
         });
         
         window.onclick = function (event) {
             if (event.target === instructions_modal) {
-                console.log(event);
+                // console.log(event);
                 instructions_modal.style.display = "none";
             }
         };
@@ -127,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function(event){
             e.preventDefault();
             if (bell_audio.paused) {
                 bell_audio.play();
-                bell[0].style.color = 'red';
+                bell[0].style.color = 'blue';
             } else {
                 bell_audio.pause();
                 bell[0].style.color = 'black';
@@ -139,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function(event){
             e.preventDefault();
             if (choir_audio.paused) {
                 choir_audio.play();
-                choir[0].style.color = 'red';
+                choir[0].style.color = 'blue';
             } else {
                 choir_audio.pause();
                 choir[0].style.color = 'black';
@@ -151,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function(event){
             e.preventDefault();
             if (vocal_audio.paused) {
                 vocal_audio.play();
-                vocal[0].style.color = 'red';
+                vocal[0].style.color = 'blue';
             } else {
                 vocal_audio.pause();
                 vocal[0].style.color = 'black';
@@ -174,13 +175,13 @@ document.addEventListener('DOMContentLoaded', function(event){
         //DOM element by data-freq
         function keyDown(e) {
             const key = (e.keyCode).toString(); //key code            
-            console.log(e);
+            // console.log(e);
             if (noteFreq[key] && !oscList[key]) {
                 playNote(key);
                 let freq = noteFreq[key].toString();
                 let ele = document.querySelectorAll(`[data-freq = '${freq}']`);
                 //white or black?
-                console.log(ele);
+                // console.log(ele);
                 if(ele[0].className === 'white key'){
                     ele[0].style.backgroundColor = 'whitesmoke';
                     ele[0].style.boxShadow = "0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(218, 216, 99)";
