@@ -1,8 +1,7 @@
-document.addEventListener('DOMContentLoaded',function(event){
-
+document.addEventListener('DOMContentLoaded', function(event){
         //Web Audio API
         let audioContext = new (window.AudioContext || window.webkitAudioContext)(); //base Audio context
-        let mainGainNode = audioContext.createGain(); //gain
+        let noteGain = audioContext.createGain(); //gain
         let oscList = []; //store key pressed oscilliators
         let filter = audioContext.createBiquadFilter();
         let noteFreq = {
@@ -35,50 +34,49 @@ document.addEventListener('DOMContentLoaded',function(event){
     
         } //key codes & note frequencies
         let volumeControl = document.querySelector("input[name='volume']");
+        let attackTime = 0.3
+        let sustainLevel = 0.8
+        let releaseTime = 0.3
         
         
-       //CONNECTIONS
-
-        mainGainNode.connect(filter);
-        filter.connect(audioContext.destination);
         
-
-    
         //DOM 
-       
+        
         let waveForm = document.querySelector("select[name='waveform']");
         let kick = document.getElementsByClassName('kick');
         let hihat = document.getElementsByClassName('hihat');
-            let hihat_audio = hihat[0].children[0];
-            let kick_audio = kick[0].children[0];  
-
+        let hihat_audio = hihat[0].children[0];
+        let kick_audio = kick[0].children[0];  
         let instructions_icon = document.getElementById('instructions-icon');
         let instructions_modal = document.getElementById('instructions-modal');
-
+        let envelope_checkbox = document.getElementById('envelope-checkbox');
+        const attackControl = document.querySelector('#attack-control');
+        const releaseControl = document.querySelector('#release-control');
+        
         //************* EVENT LISTENERS ****************
         window.addEventListener('keydown', keyDown);
         window.addEventListener('keyup', keyUp);
         window.addEventListener('change', adjustVolume, false);
         waveForm.addEventListener('change', function(event) {
-        waveForm = event.target.value;
-       });    
-
-       
-       instructions_icon.addEventListener('click', function(e){
-           instructions_modal.style.display = "block";
-           console.log(instructions_icon);
-           console.log(instructions_modal);
-       });
-
+            waveForm = event.target.value;
+        });    
+        
+        
+        instructions_icon.addEventListener('click', function(e){
+            instructions_modal.style.display = "block";
+            console.log(instructions_icon);
+            console.log(instructions_modal);
+        });
+        
         window.onclick = function (event) {
             if (event.target === instructions_modal) {
                 console.log(event);
                 instructions_modal.style.display = "none";
-        }
-    };
-
+            }
+        };
+        
         hihat[0].addEventListener('click', function(e){
-        e.preventDefault();
+            e.preventDefault();
             if (hihat_audio.paused){
                 hihat_audio.play();
                 hihat[0].style.color = 'red';
@@ -86,30 +84,39 @@ document.addEventListener('DOMContentLoaded',function(event){
                 hihat_audio.pause();
                 hihat[0].style.color = 'black';
             }
-       });
-
-       kick[0].addEventListener('click', function (e) {
-           e.preventDefault();
-           if (kick_audio.paused) {
-               kick_audio.play();
-               kick[0].style.color = 'red';
-           } else {
-               kick_audio.pause();
-               kick[0].style.color = 'black';
-           }
-       });
-
+        });
+        
+        kick[0].addEventListener('click', function (e) {
+            e.preventDefault();
+            if (kick_audio.paused) {
+                kick_audio.play();
+                kick[0].style.color = 'red';
+            } else {
+                kick_audio.pause();
+                kick[0].style.color = 'black';
+            }
+        });
+        
+        attackControl.addEventListener('input', function(){
+            attackTime = parseFloat(this.value)
+        });
+        
+        releaseControl.addEventListener('input', function(){
+            releaseTime = parseFloat(this.value)
+        });
+        
         //****************** FUNCTIONS *************************
-
+        
         function adjustVolume(e) {
-           mainGainNode.gain.value = volumeControl.value
+            noteGain.gain.value = volumeControl.value
         };
         
-
+        
         
         //DOM element by data-freq
         function keyDown(e) {
             const key = (e.keyCode).toString(); //key code            
+            console.log(e);
             if (noteFreq[key] && !oscList[key]) {
                 playNote(key);
                 let freq = noteFreq[key].toString();
@@ -122,16 +129,18 @@ document.addEventListener('DOMContentLoaded',function(event){
                 }else if(ele[0].className === 'black key'){
                     ele[0].style.backgroundColor = 'yellow';
                     ele[0].style.boxShadow = "0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(218, 216, 99)";
-                };
+                }
+                
             }
+            
         };
-    
+        
         function keyUp(e) {
             const key = (e.keyCode).toString(); //55
             if (noteFreq[key] && oscList[key]) {
                 oscList[key].stop();
                 delete oscList[key];
-                console.log(oscList);
+                // console.log(oscList);
                 let freq = noteFreq[key].toString();
                 let ele = document.querySelectorAll(`[data-freq = '${freq}']`);
                 //white or black?
@@ -144,16 +153,31 @@ document.addEventListener('DOMContentLoaded',function(event){
                 };
             }
         };
-    
+        
         function playNote(key) {
             const osc = audioContext.createOscillator(); //instrument (oscilliator)
-            osc.frequency.setValueAtTime(noteFreq[key], audioContext.currentTime);
-            osc.type = waveForm; //selected waveform
-            oscList[key] = osc; //261
-            oscList[key].connect(mainGainNode); //sound connected
-            oscList[key].start();
+            
+            
+                noteGain.gain.setValueAtTime(0, 0);
+                noteGain.gain.linearRampToValueAtTime(sustainLevel, audioContext.currentTime + attackTime);
+                noteGain.gain.setValueAtTime(sustainLevel, audioContext.currentTime + 1 - releaseTime);
+                noteGain.gain.linearRampToValueAtTime(0, audioContext.currentTime + 5);
+                
+                osc.frequency.setValueAtTime(noteFreq[key], audioContext.currentTime);
+                osc.type = waveForm; //selected waveform
+                oscList[key] = osc; //261
+                oscList[key].connect(noteGain); //sound connected
+                oscList[key].start();
+            
+            
+            
         }
+        //CONNECTIONS
+    
+         noteGain.connect(filter);
+         filter.connect(audioContext.destination);
+         
+        
+    });    
 
-
-});    
-
+    

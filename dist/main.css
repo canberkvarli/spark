@@ -7,7 +7,7 @@ table, th, td {
 
 body {
   background-image: url("/src/assets/background/stars_3.jpg");
-  background-color: black;
+  background-color: #808080;
 }
 
 .fa-square:before {
@@ -54,10 +54,12 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 #background {
-  background-color: black;
+  background-color: #3d004e;
   background-image: url("/src/assets/background/stars_1.jpg");
   height: 800px;
   margin: 30px;
+  margin-top: -30px;
+  border-radius: 8px;
 }
 
 .instructions-info {
@@ -67,11 +69,10 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 #instructions-icon {
-  margin-top: -5px;
-  position: absolute;
-  margin-left: 142px;
-  cursor: pointer;
-  animation: flicker 1.5s infinite alternate;
+    margin-top: -110px;
+    position: absolute;
+    margin-left: 115px;
+    cursor: pointer;
 }
 
 #instructions-modal {
@@ -106,13 +107,15 @@ input[type=range]::-webkit-slider-thumb {
 
 #title {
   display: flex;
-  justify-content: center;
-  font-family: "Zen Tokyo Zoo", cursive;
-  font-size: 70px;
-  margin: 0px;
-  color: #dad863;
-  /* text-shadow: 2px 2px 3px rgb(0, 0, 0), 1px 1px 5px rgb(255, 0, 234) ; */
-  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #dad863, 0 0 82px #dad863, 0 0 92px #dad863, 0 0 102px #dad863, 0 0 151px #dad863;
+    justify-content: center;
+    font-family: "Zen Tokyo Zoo", cursive;
+    font-size: 60px;
+    margin: 0px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    color: #dad863;
+    /* text-shadow: 2px 2px 3px rgb(0 0 0), 1px 1px 5px rgb(255 0 234); */
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #dad863, 0 0 82px #dad863, 0 0 92px #dad863, 0 0 102px #dad863, 0 0 151px #dad863;
 }
 
 .keyboard {
@@ -227,6 +230,16 @@ input[type=range]::-webkit-slider-thumb {
   display: flex;
   margin: 5px;
   flex-direction: column;
+}
+
+#waveform-effect{
+  position: absolute;
+  margin-top: 2px;
+  font-family:Arial, Helvetica, sans-serif;
+
+}
+#waveform-dropdown{
+  margin-top: 20px;
 }
 
 /* Font Awesome Icons */
