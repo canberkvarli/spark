@@ -74,6 +74,10 @@ input[type=range]::-webkit-slider-thumb {
     margin-left: 115px;
     cursor: pointer;
 }
+.controls{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 13px;
+}
 
 #instructions-modal {
   display: none;
