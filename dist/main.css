@@ -6,7 +6,8 @@ table, th, td {
 }
 
 body {
-  background-color: #808080;
+  background-image: url("/src/assets/background/stars_3.jpg");
+  background-color: black;
 }
 
 .fa-square:before {
@@ -27,7 +28,7 @@ body {
   height: 7.5px;
   background: #000;
   outline: none;
-  border: 3px solid lawngreen;
+  border: 5px solid lawngreen;
   border-radius: 8px;
   margin-right: 10px;
 }
@@ -35,29 +36,28 @@ body {
 .fas.fa-volume-up {
   margin: 2px;
   color: lawngreen;
-  font-size: 20px;
+  size: 10px;
 }
 
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   border: 1px solid #000000;
-  height: 15px;
+  height: 20px;
   width: 10px;
   border-radius: 3px;
   background: #ffffff;
   cursor: pointer;
-  margin-top: -14px;
+  margin-top: -12px;
   /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   /* Add cool effects to your sliders! */
 }
 
 #background {
-  background-color: #3d004e;
+  background-color: black;
+  background-image: url("/src/assets/background/stars_1.jpg");
   height: 800px;
   margin: 30px;
-  margin-top: -30px;
-  border-radius: 8px;
 }
 
 .instructions-info {
@@ -67,14 +67,11 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 #instructions-icon {
-    margin-top: -110px;
-    position: absolute;
-    margin-left: 115px;
-    cursor: pointer;
-}
-.controls{
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 13px;
+  margin-top: -5px;
+  position: absolute;
+  margin-left: 142px;
+  cursor: pointer;
+  animation: flicker 1.5s infinite alternate;
 }
 
 #instructions-modal {
@@ -82,7 +79,7 @@ input[type=range]::-webkit-slider-thumb {
   /* Hidden by default */
   position: fixed;
   /* Stay in place */
-  z-index: 125;
+  z-index: 2;
   /* Sit on top */
   left: 0;
   top: 0;
@@ -109,15 +106,13 @@ input[type=range]::-webkit-slider-thumb {
 
 #title {
   display: flex;
-    justify-content: center;
-    font-family: "Zen Tokyo Zoo", cursive;
-    font-size: 60px;
-    margin: 0px;
-    padding-bottom: 10px;
-    margin-top: 10px;
-    color: #dad863;
-    /* text-shadow: 2px 2px 3px rgb(0 0 0), 1px 1px 5px rgb(255 0 234); */
-    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #dad863, 0 0 82px #dad863, 0 0 92px #dad863, 0 0 102px #dad863, 0 0 151px #dad863;
+  justify-content: center;
+  font-family: "Zen Tokyo Zoo", cursive;
+  font-size: 70px;
+  margin: 0px;
+  color: #dad863;
+  /* text-shadow: 2px 2px 3px rgb(0, 0, 0), 1px 1px 5px rgb(255, 0, 234) ; */
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #dad863, 0 0 82px #dad863, 0 0 92px #dad863, 0 0 102px #dad863, 0 0 151px #dad863;
 }
 
 .keyboard {
@@ -142,6 +137,10 @@ input[type=range]::-webkit-slider-thumb {
   box-sizing: border-box;
   border-radius: 0.5em;
 }
+#container{
+    max-width: 100%;
+    height: 95.8%;
+}
 
 /* KEYS */
 .white {
@@ -154,15 +153,6 @@ input[type=range]::-webkit-slider-thumb {
   background-color: grey;
   border-radius: 0.5em;
   margin-top: 2px;
-}
-
-#container{
-  z-index: 3;
-  position: absolute;
-  height: 187px;
-  margin-left: 3px;
-  margin-top: 2px;
-  border-radius: 5px;
 }
 
 .black {
@@ -241,16 +231,6 @@ input[type=range]::-webkit-slider-thumb {
   display: flex;
   margin: 5px;
   flex-direction: column;
-}
-
-#waveform-effect{
-  position: absolute;
-  margin-top: 2px;
-  font-family:Arial, Helvetica, sans-serif;
-
-}
-#waveform-dropdown{
-  margin-top: 20px;
 }
 
 /* Font Awesome Icons */

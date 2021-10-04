@@ -1,7 +1,8 @@
 import AudioMotionAnalyzer from 'audiomotion-analyzer';
 
 document.addEventListener('DOMContentLoaded', function(event){
-        console.log = function() {};
+    // REMOVE CONSOLE LOGS 
+        // console.log = function() {};
         //Web Audio API
         let audioContext = new (window.AudioContext || window.webkitAudioContext)(); //base Audio context
         let noteGain = audioContext.createGain(); //gain
@@ -175,9 +176,10 @@ document.addEventListener('DOMContentLoaded', function(event){
         //DOM element by data-freq
         function keyDown(e) {
             const key = (e.keyCode).toString(); //key code            
-            // console.log(e);
+            console.log(e);
             if (noteFreq[key] && !oscList[key]) {
                 playNote(key);
+                // console.log(key)
                 let freq = noteFreq[key].toString();
                 let ele = document.querySelectorAll(`[data-freq = '${freq}']`);
                 //white or black?
@@ -189,7 +191,6 @@ document.addEventListener('DOMContentLoaded', function(event){
                     ele[0].style.backgroundColor = 'yellow';
                     ele[0].style.boxShadow = "0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(218, 216, 99)";
                 }
-                
             }
             
         };
@@ -238,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function(event){
                 audioMotion.connectInput(noteGain);
                 oscList[key].start();
                 // oscList[key].stop(audiContext.currentTime + 1);
-       
+       console.log(key)
             
         }
          function adjustVolume(e) {
