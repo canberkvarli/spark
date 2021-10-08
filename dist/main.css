@@ -67,11 +67,12 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 #instructions-icon {
-  margin-top: -5px;
-  position: absolute;
-  margin-left: 142px;
-  cursor: pointer;
-  animation: flicker 1.5s infinite alternate;
+    margin-top: -5px;
+    position: absolute;
+    margin-left: 120px;
+    margin-top: -150px;
+    cursor: pointer;
+    animation: flicker 1.5s infinite alternate;
 }
 
 #instructions-modal {
@@ -138,9 +139,11 @@ input[type=range]::-webkit-slider-thumb {
   border-radius: 0.5em;
 }
 
-#container{
-  height: 200px;
+#container > canvas {
+  height: 193px;
 }
+
+
 
 /* KEYS */
 .white {
