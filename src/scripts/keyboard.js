@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function(event){
         let bell_audio = bell[0].children[0];
         let vocal_audio = vocal[0].children[0];
 
-        let instructions_icon = document.getElementById('instructions-icon');
+        let instructions_label = document.getElementById('instructions-label');
         let instructions_modal = document.getElementById('instructions-modal');
         let envelope_checkbox = document.getElementById('envelope-checkbox');
         const attackControl = document.querySelector('#attack-control');
@@ -76,9 +76,9 @@ document.addEventListener('DOMContentLoaded', function(event){
         });    
         
         
-        instructions_icon.addEventListener('click', function(e){
+        instructions_label.addEventListener('click', function(e){
             instructions_modal.style.display = "block";
-            // console.log(instructions_icon);
+            // console.log(instructions_label);
             // console.log(instructions_modal);
         });
         

@@ -66,12 +66,14 @@ input[type=range]::-webkit-slider-thumb {
   font-family: "Zen Tokyo Zoo", cursive;
 }
 
-#instructions-icon {
-  margin-top: -5px;
+#instructions-label {
   position: absolute;
-  margin-left: 142px;
   cursor: pointer;
+  margin-left: -725px;
+  margin-top: -240px;
+  font-size: 25px;
   animation: flicker 1.5s infinite alternate;
+  color: whitesmoke;
 }
 
 #instructions-modal {
@@ -229,7 +231,7 @@ input[type=range]::-webkit-slider-thumb {
   flex-direction: column;
 }
 
-/* Font Awesome Icons */
+/* Font Awesome labels */
 .fa-square.fa-5x {
   text-shadow: 0 0 15px #ff5e00fd;
 }
