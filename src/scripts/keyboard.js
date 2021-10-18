@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function(event){
         let choir = document.getElementsByClassName('choir');
         let bell = document.getElementsByClassName('bell');
         let vocal = document.getElementsByClassName('vocal');
+        let power = document.getElementById("power");
 
         let hihat_audio = hihat[0].children[0];
         let kick_audio = kick[0].children[0];  
@@ -60,6 +61,9 @@ document.addEventListener('DOMContentLoaded', function(event){
         let choir_audio = choir[0].children[0];
         let bell_audio = bell[0].children[0];
         let vocal_audio = vocal[0].children[0];
+
+        let audios = []
+        audios.push(hihat_audio, kick_audio, bass_audio, choir_audio, bell_audio, vocal_audio);
 
         let instructions_label = document.getElementById('instructions-label');
         let instructions_modal = document.getElementById('instructions-modal');
@@ -192,7 +196,6 @@ document.addEventListener('DOMContentLoaded', function(event){
                     ele[0].style.boxShadow = "0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(218, 216, 99)";
                 }
             }
-            
         };
         
         function keyUp(e) {
@@ -238,19 +241,37 @@ document.addEventListener('DOMContentLoaded', function(event){
                 oscList[key].connect(noteGain); //sound connected
                 audioMotion.connectInput(noteGain);
                 oscList[key].start();
-                // oscList[key].stop(audiContext.currentTime + 1);
-       console.log(key)
-            
+                
+              
+
         }
          function adjustVolume(e) {
             noteGain.gain.value = volumeControl.value
         };
-        
-        //CONNECTIONS
-    
-         noteGain.connect(filter);
-         filter.connect(audioContext.destination);
- 
-    });    
+        power.addEventListener('click', function() {
+                            
+                            // play or pause track depending on state
+                            if (this.dataset.playing === 'false') {
+                                this.dataset.playing = 'true';
+                            } else if (this.dataset.playing === 'true') {
 
+                                // Kill pads
+                                audios.forEach(el => {
+                                    el.pause();
+                                })
+                                audioCtx.close();
+                                //Kill piano
+                                this.dataset.playing = 'false';
+                            }
+        }, false);
+                
+        //CONNECTIONS
+        
+        noteGain.connect(filter);
+        filter.connect(audioContext.destination);
+
+       
+        
+    });    
+    
     
