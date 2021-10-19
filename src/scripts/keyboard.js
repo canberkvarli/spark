@@ -250,19 +250,19 @@ document.addEventListener('DOMContentLoaded', function(event){
         };
         power.addEventListener('click', function() {
                             
-                            // play or pause track depending on state
-                            if (this.dataset.playing === 'false') {
-                                this.dataset.playing = 'true';
-                            } else if (this.dataset.playing === 'true') {
+            // play or pause track depending on state
+            if (this.dataset.playing === 'false') {
+                this.dataset.playing = 'true';
+            } else if (this.dataset.playing === 'true') {
 
-                                // Kill pads
-                                audios.forEach(el => {
-                                    el.pause();
-                                })
-                                audioCtx.close();
-                                //Kill piano
-                                this.dataset.playing = 'false';
-                            }
+                audios.forEach(el => {
+                    el.pause();
+                })
+                // Kill pads
+                audioCtx.close();
+                //Kill piano
+                this.dataset.playing = 'false';
+            }
         }, false);
                 
         //CONNECTIONS

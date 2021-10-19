@@ -6,7 +6,7 @@ table, th, td {
 }
 
 body {
-  background-image: url("/src/assets/background/stars_3.jpg");
+  /* background-image: url('/src/assets/background/stars_3.jpg'); */
   background-color: black;
 }
 
@@ -39,6 +39,23 @@ body {
   size: 10px;
 }
 
+.fa.fa-refresh {
+  size: 10px;
+  position: absolute;
+  font-size: 10px;
+  z-index: 999;
+}
+
+#power {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  /* position: relative; */
+  margin-left: 255px;
+  margin-top: -65px;
+  color: red;
+}
+
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   border: 1px solid #000000;
@@ -55,7 +72,7 @@ input[type=range]::-webkit-slider-thumb {
 
 #background {
   background-color: black;
-  background-image: url("/src/assets/background/stars_1.jpg");
+  /* background-image: url('/src/assets/background/stars_1.jpg'); */
   height: 800px;
   margin: 30px;
 }
