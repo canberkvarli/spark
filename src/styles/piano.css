@@ -41,12 +41,15 @@ body {
 #power{
     position: absolute;
     height: 20px;
-    width: 20px;
+    /* width: 20px; */
     /* position: relative; */
-    margin-left: 255px;
-    margin-top: -65px;
-    color: red;
+    margin-left: 235px;
+    margin-top: -73px;
+    background-color: honeydew;
 }
+
+
+
 
 
 input[type=range]::-webkit-slider-thumb {

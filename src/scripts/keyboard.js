@@ -55,6 +55,9 @@ document.addEventListener('DOMContentLoaded', function(event){
         let vocal = document.getElementsByClassName('vocal');
         let power = document.getElementById("power");
 
+        let pads = []
+        pads.push(kick, hihat, bass, choir, bell, vocal, power);
+
         let hihat_audio = hihat[0].children[0];
         let kick_audio = kick[0].children[0];  
         let bass_audio = bass[0].children[0];
@@ -258,9 +261,13 @@ document.addEventListener('DOMContentLoaded', function(event){
                 audios.forEach(el => {
                     el.pause();
                 })
+                pads.forEach(pad => {
+                    pad[0].style.color = "black"
+                })
                 // Kill pads
                 audioCtx.close();
                 //Kill piano
+
                 this.dataset.playing = 'false';
             }
         }, false);
