@@ -56,6 +56,11 @@ body {
   background-color: honeydew;
 }
 
+#power:hover {
+  cursor: pointer;
+  background-color: grey;
+}
+
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   border: 1px solid #000000;
