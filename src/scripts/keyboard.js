@@ -88,6 +88,10 @@ document.addEventListener('DOMContentLoaded', function(event){
             // console.log(instructions_label);
             // console.log(instructions_modal);
         });
+
+        window.addEventListener("load", function (e) {
+            instructions_modal.style.display = "block"
+        });
         
         window.onclick = function (event) {
             if (event.target === instructions_modal) {

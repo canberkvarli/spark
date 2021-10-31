@@ -114,6 +114,7 @@ input[type=range]::-webkit-slider-thumb {
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
+  font-size: 19.5px;
   border: 1px solid #888;
   width: 50%; /* Could be more or less, depending on screen size */
 }
@@ -123,7 +124,9 @@ input[type=range]::-webkit-slider-thumb {
     justify-content: center;
     font-family: 'Zen Tokyo Zoo', cursive;
     font-size: 70px;
-    margin: 0px;
+    margin-left: 525px;
+    margin-top: 30px;
+    position: absolute;
     color: rgb(218, 216, 99);
     /* text-shadow: 2px 2px 3px rgb(0, 0, 0), 1px 1px 5px rgb(255, 0, 234) ; */
     text-shadow:
