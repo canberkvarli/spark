@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function(event){
         //************* EVENT LISTENERS ****************
         window.addEventListener('keydown', keyDown);
         window.addEventListener('keyup', keyUp);
-        window.addEventListener('change', adjustVolume, false);
+        volumeControl.addEventListener('change', adjustVolume, false);
         waveForm.addEventListener('change', function(event) {
             waveForm = event.target.value;
         });    
@@ -247,13 +247,16 @@ document.addEventListener('DOMContentLoaded', function(event){
                 oscList[key] = osc; //261
                 oscList[key].connect(noteGain); //sound connected
                 audioMotion.connectInput(noteGain);
+                noteGain.gain.value = volumeControl.value
                 oscList[key].start();
                 
               
 
         }
          function adjustVolume(e) {
+
             noteGain.gain.value = volumeControl.value
+            
         };
         power.addEventListener('click', function() {
             // play or pause track depending on state
@@ -281,8 +284,6 @@ document.addEventListener('DOMContentLoaded', function(event){
         noteGain.connect(filter);
         filter.connect(audioContext.destination);
 
-       
-        
     });    
     
     
