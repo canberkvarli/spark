@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function(event){
         } //key codes & note frequencies
         let volumeControl = document.querySelector("input[name='volume']");
         let attackTime = 0.3
+        let volume = 0;
         let sustainLevel = 0.8
         let releaseTime = 0.3
         
@@ -235,12 +236,14 @@ document.addEventListener('DOMContentLoaded', function(event){
             const audioCtx = audioMotion.audioCtx;
             const osc = audioCtx.createOscillator(),
             noteGain = audioCtx.createGain();
-            // const osc = audioContext.createOscillator(); //instrument (oscilliator)
-            
+
                 noteGain.gain.setValueAtTime(0, 0);
                 noteGain.gain.linearRampToValueAtTime(sustainLevel, audioCtx.currentTime + attackTime);
-                noteGain.gain.setValueAtTime(sustainLevel, audioCtx.currentTime + 1 - releaseTime);
+                // noteGain.gain.setValueAtTime(sustainLevel, audioCtx.currentTime + 1 - releaseTime);
+                noteGain.gain.setValueAtTime(0, audioCtx.currentTime + 1 - releaseTime);
+
                 noteGain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 5);
+
                 noteGain.gain.value = volumeControl.value
                 osc.frequency.setValueAtTime(noteFreq[key], audioCtx.currentTime);
                 osc.type = waveForm; //selected waveform
