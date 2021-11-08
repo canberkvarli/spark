@@ -28,15 +28,15 @@ body {
   height: 7.5px;
   background: #000;
   outline: none;
-  border: 5px solid lawngreen;
+  border: 3px solid #dad863;
   border-radius: 8px;
   margin-right: 10px;
 }
 
 .fas.fa-volume-up {
   margin: 2px;
-  color: lawngreen;
-  size: 10px;
+  color: #d6d57e;
+  size: 7px;
 }
 
 .fa.fa-refresh {
