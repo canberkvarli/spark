@@ -91,6 +91,10 @@ input[type=range]::-webkit-slider-thumb {
 #content-one{
     width: 50%;
 }
+#container > canvas{
+    max-width: 106%;
+    height: inherit;
+}
 #content-two{
     width: 50%;
     margin-bottom: 20px;
