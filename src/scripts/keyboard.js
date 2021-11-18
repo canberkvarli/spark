@@ -244,13 +244,13 @@ document.addEventListener('DOMContentLoaded', function(event){
 
                 noteGain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 5);
 
-                noteGain.gain.value = volumeControl.value
+                // noteGain.gain.value = volumeControl.value
                 osc.frequency.setValueAtTime(noteFreq[key], audioCtx.currentTime);
                 osc.type = waveForm; //selected waveform
                 oscList[key] = osc; //261
                 oscList[key].connect(noteGain); //sound connected
                 audioMotion.connectInput(noteGain);
-                noteGain.gain.value = volumeControl.value
+                // noteGain.gain.value = volumeControl.value
                 oscList[key].start();
                 
               
