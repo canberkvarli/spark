@@ -37,11 +37,12 @@ document.addEventListener('DOMContentLoaded', function(event){
             '73': 1046.50, //I, C6
     
         } //key codes & note frequencies
-        let volumeControl = document.querySelector("input[name='volume']");
+
         let attackTime = 0.3
         let volume = 0;
         let sustainLevel = 0.8
         let releaseTime = 0.3
+        // let volumeControl = document.querySelector("input[name='volume']");
         
         
         
@@ -78,7 +79,8 @@ document.addEventListener('DOMContentLoaded', function(event){
         //************* EVENT LISTENERS ****************
         window.addEventListener('keydown', keyDown);
         window.addEventListener('keyup', keyUp);
-        volumeControl.addEventListener('change', adjustVolume, false);
+        // volumeControl.addEventListener('change', adjustVolume, false);
+
         waveForm.addEventListener('change', function(event) {
             waveForm = event.target.value;
         });    
