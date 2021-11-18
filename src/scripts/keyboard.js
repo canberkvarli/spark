@@ -234,9 +234,9 @@ document.addEventListener('DOMContentLoaded', function(event){
 
         function playNote(key) {
             const audioCtx = audioMotion.audioCtx;
-            const osc = audioCtx.createOscillator(),
+            const osc = audioCtx.createOscillator();
             noteGain = audioCtx.createGain();
-
+            
                 noteGain.gain.setValueAtTime(0, 0);
                 noteGain.gain.linearRampToValueAtTime(sustainLevel, audioCtx.currentTime + attackTime);
                 // noteGain.gain.setValueAtTime(sustainLevel, audioCtx.currentTime + 1 - releaseTime);
