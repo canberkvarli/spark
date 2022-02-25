@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function(event){
         window.addEventListener('keydown', keyDown);
         window.addEventListener('keyup', keyUp);
         volumeControl.addEventListener('change', adjustVolume, false);
+
         waveForm.addEventListener('change', function(event) {
             waveForm = event.target.value;
         });    
@@ -188,7 +189,6 @@ document.addEventListener('DOMContentLoaded', function(event){
         //DOM element by data-freq
         function keyDown(e) {
             const key = (e.keyCode).toString(); //key code            
-            console.log(e);
             if (noteFreq[key] && !oscList[key]) {
                 playNote(key);
                 // console.log(key)
