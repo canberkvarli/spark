@@ -69,10 +69,8 @@ input[type=range]::-webkit-slider-thumb {
   border-radius: 3px;
   background: #ffffff;
   cursor: pointer;
-  margin-top: -12px;
-  /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  /* Add cool effects to your sliders! */
+  margin-top: -12px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
 }
 
 #background {
@@ -119,34 +117,25 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 #instructions-modal {
-  display: none;
-  /* Hidden by default */
-  position: fixed;
-  /* Stay in place */
-  z-index: 2;
-  /* Sit on top */
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
   left: 0;
   top: 0;
-  width: 100%;
-  /* Full width */
-  height: 100%;
-  /* Full height */
-  overflow: auto;
-  /* Enable scroll if needed */
-  background-color: #9b0000;
-  /* Fallback color */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(155, 0, 0); /* Fallback color */
   background-color: rgba(255, 255, 255, 0.4);
 }
 
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto;
-  /* 15% from the top and centered */
+  margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   font-size: 19.5px;
   border: 1px solid #888;
-  width: 50%;
-  /* Could be more or less, depending on screen size */
+  width: 50%; /* Could be more or less, depending on screen size */
 }
 
 #title {
@@ -157,9 +146,9 @@ input[type=range]::-webkit-slider-thumb {
   margin-left: 525px;
   margin-top: 30px;
   position: absolute;
-  color: #dad863;
+  color: rgb(218, 216, 99);
   /* text-shadow: 2px 2px 3px rgb(0, 0, 0), 1px 1px 5px rgb(255, 0, 234) ; */
-  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #dad863, 0 0 82px #dad863, 0 0 92px #dad863, 0 0 102px #dad863, 0 0 151px #dad863;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(218, 216, 99), 0 0 82px rgb(218, 216, 99), 0 0 92px rgb(218, 216, 99), 0 0 102px rgb(218, 216, 99), 0 0 151px rgb(218, 216, 99);
 }
 
 .keyboard {
@@ -218,7 +207,7 @@ input[type=range]::-webkit-slider-thumb {
   border-radius: 0.5em;
   position: absolute;
   border-top-color: darkred;
-  border: #ff6600 solid 4px;
+  border: rgb(255, 102, 0) solid 4px;
   margin-right: -40px;
   margin-top: -50px;
   margin-left: -52px;
@@ -278,21 +267,21 @@ input[type=range]::-webkit-slider-thumb {
 
 /* Font Awesome labels */
 .fa-square.fa-5x {
-  text-shadow: 0 0 15px #ff5e00fd;
+  text-shadow: 0 0 15px rgba(255, 94, 0, 0.9921568627);
 }
 
 #github {
-  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #dad863, 0 0 82px #dad863, 0 0 92px #dad863;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(218, 216, 99), 0 0 82px rgb(218, 216, 99), 0 0 92px rgb(218, 216, 99);
   margin: 20px;
 }
 
 #twitter {
-  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #dad863, 0 0 82px #dad863, 0 0 92px #dad863;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(218, 216, 99), 0 0 82px rgb(218, 216, 99), 0 0 92px rgb(218, 216, 99);
   margin: 20px;
 }
 
 #linkedin {
-  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #dad863, 0 0 82px #dad863, 0 0 92px #dad863;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(218, 216, 99), 0 0 82px rgb(218, 216, 99), 0 0 92px rgb(218, 216, 99);
   margin: 20px;
 }
 
@@ -317,7 +306,7 @@ input[type=range]::-webkit-slider-thumb {
 
 @keyframes flicker {
   0%, 18%, 22%, 25%, 53%, 57%, 100% {
-    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px red, 0 0 80px red, 0 0 90px red, 0 0 100px red, 0 0 550px red;
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px rgb(255, 0, 0), 0 0 80px rgb(255, 0, 0), 0 0 90px rgb(255, 0, 0), 0 0 100px rgb(255, 0, 0), 0 0 550px rgb(255, 0, 0);
   }
   20%, 24%, 55% {
     text-shadow: none;
